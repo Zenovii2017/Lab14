@@ -1,0 +1,25 @@
+from binary_search_tree.linkedbst import LinkedBST
+
+tree = LinkedBST()
+tree.add("A")
+tree.add("B")
+tree.add("C")
+tree.add("D")
+tree.add("E")
+tree.add("F")
+tree.add("G")
+tree.add("H")
+tree.add("I")
+tree.add("J")
+tree.add("K")
+
+print(tree)
+print("Answer must be False: ", tree.isBalanced())
+tree.rebalance()
+print(tree)
+print("Answer must be True: \n", tree.isBalanced())
+print("Answer must be D : \n", tree.successor("C").data)
+print("Answer must be B : \n", tree.predecessor("C").data)
+print("Answer must be C: \n")
+for i in tree.rangeFind("B", "D"):
+    print(i.data)
