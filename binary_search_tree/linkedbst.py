@@ -126,6 +126,21 @@ class LinkedBST(AbstractCollection):
 
         return recurse(self._root)
 
+    def super_find(self, item):
+        """
+        support super search
+        :param item: data
+        :return: BSTNode
+        """
+        def recurse(node):
+            if node != None:
+                if node.data == item:
+                    return node
+                recurse(node.left)
+                return recurse(node.right)
+            return None
+
+        return recurse(self._root)
     # Mutator methods
     def clear(self):
         """Makes self become empty."""
@@ -331,7 +346,7 @@ class LinkedBST(AbstractCollection):
     def rebalance(self):
         '''
         Rebalances the tree.
-        :return:
+        :return: None
         '''
 
         def recurse(p, lst):
